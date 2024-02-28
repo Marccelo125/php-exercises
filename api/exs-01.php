@@ -104,6 +104,7 @@
     cadastrarProduto("Refri 3L", 12);
     
     listarProdutos();
-    excluirProduto('maça');
+    echo "<br /> Excluindo produtos <br />";
+    excluirProduto('Maçã');
     listarProdutos()
 ?>
