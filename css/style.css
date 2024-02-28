@@ -1,0 +1,24 @@
+:root {
+    --color-primary: #bb86fc;
+    --color-primary-variant: #3700b3;
+    --color-secondary: #03dac6;
+}
+
+.btn-exercicio {
+    border: 2px solid var(--color-primary);
+    background: var(--color-primary);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-exercicio:hover {
+    border: 2px solid var(--color-primary-variant);
+    background-color: var(--color-primary-variant);
+}
+
+.btn-exercicio a {
+    color: white;
+    text-decoration: none;
+}
+
+
