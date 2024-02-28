@@ -25,7 +25,7 @@
     var_dump($resultado);
 
     // Exercício 02
-    echo 'Exercício 02 <br />';
+    echo '<br /> Exercício 02 <br />';
 
     $notaPeso = array(
         [
