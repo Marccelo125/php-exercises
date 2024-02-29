@@ -14,9 +14,9 @@ async function gerarExercicios() {
         for (link of exercicio.links) {
             const divExercicio = document.getElementById("div-exercicio")
             divExercicio.innerHTML += `
-                <a href="${link.link}" target="_blank" class="text-decoration-none">Exercício n°${exercicio.links.indexOf(link) + 1}</a>
+                <a href="${link.link}" target="_blank" class="d-flex text-decoration-none flex-column">Exercício n°${exercicio.links.indexOf(link) + 1}</a>
             `
         }
     });
+    gerarExercicios()
 }
-gerarExercicios()
