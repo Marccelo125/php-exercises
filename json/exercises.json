@@ -4,7 +4,10 @@
     "links": 
     [
         {
-            "link": "https://php-exercises.vercel.app/api/exs-01.php"
+          "link": "https://php-exercises.vercel.app/api/exs-01/index.php"
+        },
+        {
+          "link": "https://php-exercises.vercel.app/api/exs-02/index.php"
         }
     ]
   }
