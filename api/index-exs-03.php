@@ -20,17 +20,17 @@ require('exercises-php/exs-03/carro.php');
 
 <body class="bg-dark p-2">
     <main>
-        <div class="container-fuild text-white m-5 ">
-            <div class="row  d-flex justify-content-evenly text-center">
-                <div class="col-12 col-md-6 col-lg-6">
+        <div class="container-fuild text-white m-5">
+            <div class="row d-flex justify-content-evenly text-center">
+                <div class="col-12 col-md-5 col-lg-5">
                     <h1 style="color: light-blue;">N° do Exercício</h1>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6">
-                    <h1 class="text-success">Resultado</h1>
+                <div class="col-12 col-md-5 col-lg-5">
+                   <h1 class="text-success">Resultado</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3 class="text-warning">Exercício 01</h3>
                     <p>
                         Crie uma classe Contador, que encapsule um valor usado para
@@ -43,7 +43,7 @@ require('exercises-php/exs-03/carro.php');
                     </ol>
                     </p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
                     $meuContador = new contador();
 
@@ -57,7 +57,7 @@ require('exercises-php/exs-03/carro.php');
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3 class="text-warning">Exercício 02</h3>
                     <p>
                         Crie uma classe que modele uma bola: <br />
@@ -74,7 +74,7 @@ require('exercises-php/exs-03/carro.php');
                     </ol>
                     </p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
                     $novaBola = new moldarBola("Vermelho", "25", "Metal");
 
@@ -85,7 +85,7 @@ require('exercises-php/exs-03/carro.php');
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3 class="text-warning">Exercício 03</h3>
                     <p>
                         Crie uma classe para implementar uma conta corrente. A classe
@@ -103,7 +103,7 @@ require('exercises-php/exs-03/carro.php');
                     </ol>
                     </p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
                     $novaConta = new contaCorrente(10, "Marcelo", 100);
                     $novaConta->novoNome("João");
@@ -114,7 +114,7 @@ require('exercises-php/exs-03/carro.php');
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3 class="text-warning">Exercício 04</h3>
                     <p>
                         Crie uma classe para representar uma Calculadora. Esta classe
@@ -128,7 +128,7 @@ require('exercises-php/exs-03/carro.php');
                     </ol>
                     </p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
                     $novoCalculo = new  calculadora();
                     $novoCalculo->somar(1, 2);
@@ -140,7 +140,7 @@ require('exercises-php/exs-03/carro.php');
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3 class="text-warning">Exercício 05</h3>
                     <p>
                         Faça um programa completo utilizando classes e métodos que:<br /> <br />
@@ -168,7 +168,7 @@ require('exercises-php/exs-03/carro.php');
                         possível abastecer se não tiver gasolina suficiente na bomba.</span>
                     </p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
                     $novaBomba = new bombaCombustivel("GASOLINA", 10000);
                     $novaBomba->abastecerPorValor(50);
@@ -181,7 +181,7 @@ require('exercises-php/exs-03/carro.php');
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3 class="text-warning">Exercício 06</h3>
                     <p>
                         Implemente uma classe chamada Carro com as seguintes
@@ -201,7 +201,7 @@ require('exercises-php/exs-03/carro.php');
                     </ol>
                     </p>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
+                <div class="col-12 col-md-5 col-lg-5 my-2 mx-5 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
                         $novoCarro = new carro("Fusca", 10, 100);
                         $novoCarro -> andar(10);
