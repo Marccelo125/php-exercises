@@ -5,8 +5,8 @@
     }
   },
   "routes": [
-    { "src": "/api/exercises-php/(.*)",  "dest": "/api/index-exs-01.php" },
-    { "src": "/api/exercises-php/(.*)",  "dest": "/api/index-exs-02.php" },
-    { "src": "/api/exercises-php/(.*)",  "dest": "/api/index-exs-03.php" }
+    { "src": "/api/exercises-php/exs-01(.*)",  "dest": "/api/index-exs-01.php" },
+    { "src": "/api/exercises-php/exs-02(.*)",  "dest": "/api/index-exs-02.php" },
+    { "src": "/api/exercises-php/exs-03(.*)",  "dest": "/api/index-exs-03.php" }
   ]
 }
