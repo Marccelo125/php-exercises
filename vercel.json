@@ -1,13 +1,13 @@
 {
   "functions": {
-    "api/exercises-php/*.php": {
+    "api/*.php": {
       "runtime": "vercel-php@0.7.0"
     }
   },
   "routes": [
-    { "src": "/api/exercises-php/exs-01/(.*)", "dest": "/api/exercises-php/exs-01/index.php" },
-    { "src": "/api/exercises-php/exs-02/(.*)", "dest": "/api/exercises-php/exs-02/index.php" },
-    { "src": "/api/exercises-php/exs-03/(.*)", "dest": "/api/exercises-php/exs-03/index.php" },
+    { "src": "/api/exercises-php/exs-01/(*.php)", "dest": "/api/exercises-php/exs-01/index.php" },
+    { "src": "/api/exercises-php/exs-02/(*.php)", "dest": "/api/exercises-php/exs-02/index.php" },
+    { "src": "/api/exercises-php/exs-03/(*.php)", "dest": "/api/exercises-php/exs-03/index.php" },
     { "src": "/api/exercises-php/(.*)", "dest": "/api/index.php" }
   ]
 }
