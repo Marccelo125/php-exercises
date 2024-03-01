@@ -1,8 +1,8 @@
 <?php
 
-require('./animal.php');
-require('./cachorro.php');
-require('./gato.php');
+require('./exs-02/animal.php');
+require('./exs-02/cachorro.php');
+require('./exs-02/gato.php');
 
 $animal = new Animal("carnivoro", "dinossauro", false);
 $animal2 = new Animal("herbívoro", "ave", true);

@@ -1,17 +1,10 @@
 <?php
-require('./contador.php');
-require('./bola.php');
-require('./contaCorrente.php');
-require('./calculadora.php');
-require('./bombaCombustivel.php');
-require('./carro.php');
-// echo '<br /> <br /> <h3>Exercício 06</h3> <br />';
-
-// $novoCarro = new carro("Fusca", 10, 100);
-// $novoCarro -> andar(10);
-// $novoCarro -> obterGasolina();
-// $novoCarro -> adicionarGasolina(50);
-
+require('./exs-03/contador.php');
+require('./exs-03/bola.php');
+require('./exs-03/contaCorrente.php');
+require('./exs-03/calculadora.php');
+require('./exs-03/bombaCombustivel.php');
+require('./exs-03//carro.php');
 ?>
 
 
@@ -210,13 +203,10 @@ require('./carro.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow border p-4" style="max-height: 75vh;">
                     <?php
-                    $novaBomba = new bombaCombustivel("GASOLINA", 10000);
-                    $novaBomba->abastecerPorValor(50);
-                    $novaBomba->abastecerPorLitro(50);
-
-                    $novaBomba->alterarValor(50);
-                    $novaBomba->alterarTipoCombustivel("DIESEL");
-                    $novaBomba->alterarQntdCombustivel(30);
+                        $novoCarro = new carro("Fusca", 10, 100);
+                        $novoCarro -> andar(10);
+                        $novoCarro -> obterGasolina();
+                        $novoCarro -> adicionarGasolina(50);
                     ?>
                 </div>
             </div>
