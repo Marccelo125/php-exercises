@@ -4,13 +4,13 @@
     "links": 
     [
         {
-          "link": "https://php-exercises.vercel.app/api/exs-01/index.php"
+          "link": "https://php-exercises.vercel.app/api/exercises-php/exs-01/index.php"
         },
         {
-          "link": "https://php-exercises.vercel.app/api/exs-02/index.php"
+          "link": "https://php-exercises.vercel.app/api/exercises-php/exs-02/index.php"
         },
         {
-          "link": "https://php-exercises.vercel.app/api/exs-03/index.php"
+          "link": "https://php-exercises.vercel.app/api/exercises-php/exs-03/index.php"
         }
     ]
   }
