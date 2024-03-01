@@ -1,10 +1,10 @@
 <?php
-require('https://php-exercises.vercel.app/api/exercises-php/exs-03/contador.php');
-require('https://php-exercises.vercel.app/api/exercises-php/exs-03/bola.php');
-require('https://php-exercises.vercel.app/api/exercises-php/exs-03/contaCorrente.php');
-require('https://php-exercises.vercel.app/api/exercises-php/exs-03/calculadora.php');
-require('https://php-exercises.vercel.app/api/exercises-php/exs-03/bombaCombustivel.php');
-require('https://php-exercises.vercel.app/api/exercises-php/exs-03//carro.php');
+require('./exs-03/contador.php');
+require('./exs-03/bola.php');
+require('./exs-03/contaCorrente.php');
+require('./exs-03/calculadora.php');
+require('./exs-03/bombaCombustivel.php');
+require('./exs-03//carro.php');
 ?>
 
 

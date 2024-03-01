@@ -1,8 +1,8 @@
 <?php
 
-require('https://php-exercises.vercel.app/api/exercises-php/exs-02/animal.php');
-require('https://php-exercises.vercel.app/api/exercises-php/exs-02/cachorro.php');
-require('https://php-exercises.vercel.app/api/exercises-php/exs-02/gato.php');
+require('./exs-02/animal.php');
+require('./exs-02/cachorro.php');
+require('./exs-02/gato.php');
 
 $animal = new Animal("carnivoro", "dinossauro", false);
 $animal2 = new Animal("herbívoro", "ave", true);
