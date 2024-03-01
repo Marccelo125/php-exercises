@@ -7,7 +7,6 @@
   "routes": [
     { "src": "/api/exercises-php/exs-01/(*.php)", "dest": "/api/index-exs-01.php" },
     { "src": "/api/exercises-php/exs-02/(*.php)", "dest": "/api/index-exs-02.php" },
-    { "src": "/api/exercises-php/exs-03/(*.php)", "dest": "/api/index-exs-03.php" },
-    { "src": "/api/exercises-php/(.*)", "dest": "/api/index.php" }
+    { "src": "/api/exercises-php/exs-03/(*.php)", "dest": "/api/index-exs-03.php" }
   ]
 }
