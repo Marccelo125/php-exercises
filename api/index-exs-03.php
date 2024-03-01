@@ -4,7 +4,7 @@ require('exercises-php/exs-03/bola.php');
 require('exercises-php/exs-03/contaCorrente.php');
 require('exercises-php/exs-03/calculadora.php');
 require('exercises-php/exs-03/bombaCombustivel.php');
-require('exercises-php/exs-03//carro.php');
+require('exercises-php/exs-03/carro.php');
 ?>
 
 
