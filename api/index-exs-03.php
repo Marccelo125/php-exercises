@@ -1,10 +1,10 @@
 <?php
-require('/api/exercises-php/exs-03/contador.php');
-require('/api/exercises-php/exs-03/bola.php');
-require('/api/exercises-php/exs-03/contaCorrente.php');
-require('/api/exercises-php/exs-03/calculadora.php');
-require('/api/exercises-php/exs-03/bombaCombustivel.php');
-require('/api/exercises-php/exs-03//carro.php');
+require('./exs-03/contador.php');
+require('./exs-03/bola.php');
+require('./exs-03/contaCorrente.php');
+require('./exs-03/calculadora.php');
+require('./exs-03/bombaCombustivel.php');
+require('./exs-03//carro.php');
 ?>
 
 
