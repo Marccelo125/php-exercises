@@ -27,6 +27,7 @@ require('exercises-php/exs-03/carro.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6">
                     <h1 class="text-success">Resultado</h1>
+                    <span>Código no GitHub <a href="https://github.com/Marccelo125/php-exercises/tree/master/api/exercises-php/exs-03" target="_blank">Clique aqui</a></span>
                 </div>
             </div>
             <div class="row">

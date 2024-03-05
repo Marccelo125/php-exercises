@@ -1,6 +1,6 @@
 <?php
 
-class gato extends Animal {
+class gato1 extends Animal1 {
     public $apelido;
     public $personalidade;
 

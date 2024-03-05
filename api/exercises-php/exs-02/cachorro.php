@@ -1,6 +1,6 @@
 <?php
 
-class cachorro extends Animal {
+class cachorro1 extends Animal1 {
     public $nome;
 
     public function __construct($nome, $tipo, $especie, $voa) {

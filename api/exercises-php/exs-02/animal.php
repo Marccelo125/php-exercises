@@ -1,6 +1,6 @@
 <?php
 
-class animal {
+class animal1 {
     public $tipo;
     public $especie;
     public $voa;
