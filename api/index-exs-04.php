@@ -75,7 +75,7 @@ require('exercises-php/exs-03/contador.php');
                         }
                     }
 
-                    class camarote extends ingresso
+                    class Camarote extends ingresso
                     {
                         public function imprimeValor()
                         {
@@ -91,7 +91,7 @@ require('exercises-php/exs-03/contador.php');
                     $ingressoVIP = new Vip(50.00);
                     $ingressoVIP->imprimeValor();
 
-                    $ingressoCamarote = new camarote(50.00);
+                    $ingressoCamarote = new Camarote(50.00);
                     $ingressoCamarote->imprimeValor();
                     ?>
                 </div>
@@ -177,7 +177,7 @@ require('exercises-php/exs-03/contador.php');
                             return $this->descontoPreco;
                         }
 
-                        public function imprimeAdicionalPreco()
+                        public function imprimeDescontoPreco()
                         {
                             echo "Desconto no preço: R$ " . number_format($this->descontoPreco, 2, ',', '.') . "<br />";
                         }
@@ -203,9 +203,9 @@ require('exercises-php/exs-03/contador.php');
                     $imovelVelho = new Velho("Forum Drive, Strawberry.", 150000, 25000);
 
                     echo "Endereço do imóvel: " . $imovelVelho->getEndereco() . "<br />";
-                    echo "Desconto do imóvel: R$ " . number_format($imovelVelho->getPreco(), 2, ',', '.') . "<br />";
+                    echo "Preço do imóvel: R$ " . number_format($imovelVelho->getPreco(), 2, ',', '.') . "<br />";
 
-                    $imovelVelho->imprimeAdicionalPreco();
+                    $imovelVelho->imprimeDescontoPreco();
                     echo "Preço total do imóvel: R$ " . number_format($imovelVelho->getPrecoTotal(), 2, ',', '.') . "<br />";
                     ?>
                 </div>
@@ -228,11 +228,13 @@ require('exercises-php/exs-03/contador.php');
                     {
                         protected $nome;
                         protected $idade;
+                        protected $voa;
 
-                        public function __construct($nome, $idade)
+                        public function __construct($nome, $idade, $voa)
                         {
                             $this->nome = $nome;
                             $this->idade = $idade;
+                            $this->voa = $voa;
                         }
 
                         // Métodos de acesso
@@ -246,9 +248,13 @@ require('exercises-php/exs-03/contador.php');
                             return $this->idade;
                         }
 
-                        public function emiteSom()
+                        public function voar()
                         {
-                            echo "O animal emite um som. <br />";
+                            if ($this->voa) {
+                                echo "Voando... <br />";
+                            } else {
+                                echo "Este animal não voa. <br />";
+                            }
                         }
                     }
 
@@ -276,29 +282,30 @@ require('exercises-php/exs-03/contador.php');
                         }
                     }
 
-                    $cachorro = new Cachorro("Tininha", 5);
+                    $cachorro = new Cachorro("Tininha", 5, false);
                     echo "Nome do cachorro: " . $cachorro->getNome() . "<br />";
                     echo "Idade do cachorro: " . $cachorro->getIdade() . " anos" . "<br />";
-                    $cachorro->emiteSom();
+                    $cachorro->voar();
                     $cachorro->late();
 
                     echo "<hr>";
 
-                    $gato = new Gato("Pudim", 1);
+                    $gato = new Gato("Pudim", 1, false);
                     echo "Nome do gato: " . $gato->getNome() . "<br />";
                     echo "Idade do gato: " . $gato->getIdade() . " anos" . "<br />";
-                    $gato->emiteSom();
+                    $gato->voar();
                     $gato->mia();
 
                     echo "<hr>";
 
-                    $cavalo = new Cavalo("Trovão", 12);
+                    $cavalo = new Cavalo("Trovão", 12, false);
                     echo "Nome do cavalo: " . $cavalo->getNome() . "<br />";
                     echo "Idade do cavalo: " . $cavalo->getIdade() . " anos" . "<br />";
-                    $cavalo->emiteSom();
+                    $cavalo->voar();
                     $cavalo->relincha();
 
                     ?>
+
                 </div>
             </div>
         </div>

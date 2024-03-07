@@ -3,10 +3,12 @@
 class Animal {
     protected $nome;
     protected $idade;
+    protected $voa;
 
-    public function __construct($nome, $idade) {
+    public function __construct($nome, $idade, $voa) {
         $this->nome = $nome;
         $this->idade = $idade;
+        $this->voa = $voa;
     }
 
     // Métodos de acesso
@@ -18,8 +20,12 @@ class Animal {
         return $this->idade;
     }
 
-    public function emiteSom() {
-        echo "O animal emite um som. <br />";
+    public function voar() {
+        if ($this->voa) {
+            echo "Voando... <br />";
+        } else {
+            echo "Este animal não voa. <br />";
+        }
     }
 }
 
@@ -41,26 +47,26 @@ class Cavalo extends Animal {
     }
 }
 
-$cachorro = new Cachorro("Tininha", 5);
+$cachorro = new Cachorro("Tininha", 5, false);
 echo "Nome do cachorro: " . $cachorro->getNome() . "<br />";
 echo "Idade do cachorro: " . $cachorro->getIdade() . " anos" . "<br />";
-$cachorro->emiteSom();
+$cachorro->voar();
 $cachorro->late();
 
 echo "<hr>";
 
-$gato = new Gato("Pudim", 1);
+$gato = new Gato("Pudim", 1, false);
 echo "Nome do gato: " . $gato->getNome() . "<br />";
 echo "Idade do gato: " . $gato->getIdade() . " anos" . "<br />";
-$gato->emiteSom();
+$gato->voar();
 $gato->mia();
 
 echo "<hr>";
 
-$cavalo = new Cavalo("Trovão", 12);
+$cavalo = new Cavalo("Trovão", 12, false);
 echo "Nome do cavalo: " . $cavalo->getNome() . "<br />";
 echo "Idade do cavalo: " . $cavalo->getIdade() . " anos" . "<br />";
-$cavalo->emiteSom();
+$cavalo->voar();
 $cavalo->relincha();
 
 ?>
