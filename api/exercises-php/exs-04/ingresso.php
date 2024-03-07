@@ -24,7 +24,7 @@ class vip extends ingresso {
     }
 }
 
-class camarote extends ingresso {
+class Camarote extends ingresso {
     public function imprimeValor() {
         $valorCamarote = 40;
         echo "<br /> Valor do ingresso Camarote: R$ " . number_format($this->valor + $valorCamarote, 2, ',', '.' . "<br />");
@@ -38,5 +38,5 @@ $ingressoNormal->imprimeValor();
 $ingressoVIP = new Vip(50.00);
 $ingressoVIP->imprimeValor();
 
-$ingressoCamarote = new camarote(50.00);
+$ingressoCamarote = new Camarote(50.00);
 $ingressoCamarote->imprimeValor();

@@ -51,7 +51,7 @@ class Velho extends Imovel {
         return $this->descontoPreco;
     }
 
-    public function imprimeAdicionalPreco() {
+    public function imprimeDescontoPreco() {
         echo "Desconto no preço: R$ " . number_format($this->descontoPreco, 2, ',', '.') . "<br />";
     }
 
@@ -75,7 +75,7 @@ echo "<hr>";
 $imovelVelho = new Velho("Forum Drive, Strawberry.", 150000, 25000);
 
 echo "Endereço do imóvel: " . $imovelVelho->getEndereco() . "<br />";
-echo "Desconto do imóvel: R$ " . number_format($imovelVelho->getPreco(), 2, ',', '.') . "<br />";
+echo "Preço do imóvel: R$ " . number_format($imovelVelho->getPreco(), 2, ',', '.') . "<br />";
 
-$imovelVelho->imprimeAdicionalPreco();
+$imovelVelho->imprimeDescontoPreco();
 echo "Preço total do imóvel: R$ " . number_format($imovelVelho->getPrecoTotal(), 2, ',', '.') . "<br />";
