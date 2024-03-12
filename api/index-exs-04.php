@@ -1,7 +1,8 @@
-<?php
-require('exercises-php/exs-03/contador.php');
+<?php 
+require_once('./exercises-php/exs-04/animais.php');
+require_once('./exercises-php/exs-04/imovel.php');
+require_once('./exercises-php/exs-04/ingresso.php');
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -44,46 +45,6 @@ require('exercises-php/exs-03/contador.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
-
-                    abstract class Ingresso
-                    {
-                        protected $valor = 10;
-
-                        public function __construct($valor)
-                        {
-                            $this->valor = $valor;
-                        }
-
-                        abstract public function imprimeValor();
-                    }
-
-                    // Classe Normal que herda de Ingresso
-                    class normal extends ingresso
-                    {
-                        public function imprimeValor()
-                        {
-                            echo "Valor do ingresso normal: R$ " . number_format($this->valor, 2, ',', '.') . "<br />";
-                        }
-                    }
-
-                    class vip extends ingresso
-                    {
-                        public function imprimeValor()
-                        {
-                            $valorVip = 20;
-                            echo "Valor do ingresso VIP: R$ " . number_format($this->valor + $valorVip, 2, ',', '.' . "<br />");
-                        }
-                    }
-
-                    class Camarote extends ingresso
-                    {
-                        public function imprimeValor()
-                        {
-                            $valorCamarote = 40;
-                            echo "<br /> Valor do ingresso Camarote: R$ " . number_format($this->valor + $valorCamarote, 2, ',', '.' . "<br />");
-                        }
-                    }
-
                     $ingressoNormal = new Normal(50.00);
                     $ingressoNormal->imprimeValor();
 
@@ -113,81 +74,6 @@ require('exercises-php/exs-03/contador.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
-
-                    class imovel
-                    {
-                        protected $endereco;
-                        protected $preco;
-
-                        public function __construct($endereco, $preco)
-                        {
-                            $this->endereco = $endereco;
-                            $this->preco = $preco;
-                        }
-
-                        public function getEndereco()
-                        {
-                            return $this->endereco;
-                        }
-
-                        public function getPreco()
-                        {
-                            return $this->preco;
-                        }
-                    }
-
-                    class Novo extends Imovel
-                    {
-                        private $adicionalPreco;
-
-                        public function __construct($endereco, $preco, $adicionalPreco)
-                        {
-                            parent::__construct($endereco, $preco);
-                            $this->adicionalPreco = $adicionalPreco;
-                        }
-
-                        public function getAdicionalPreco()
-                        {
-                            return $this->adicionalPreco;
-                        }
-
-                        public function imprimeAdicionalPreco()
-                        {
-                            echo "Adicional no preço: R$ " . number_format($this->adicionalPreco, 2, ',', '.') . "<br />";
-                        }
-
-                        public function getPrecoTotal()
-                        {
-                            return $this->preco + $this->adicionalPreco;
-                        }
-                    }
-
-                    class Velho extends Imovel
-                    {
-                        private $descontoPreco;
-
-                        public function __construct($endereco, $preco, $descontoPreco)
-                        {
-                            parent::__construct($endereco, $preco);
-                            $this->descontoPreco = $descontoPreco;
-                        }
-
-                        public function getDescontoPreco()
-                        {
-                            return $this->descontoPreco;
-                        }
-
-                        public function imprimeDescontoPreco()
-                        {
-                            echo "Desconto no preço: R$ " . number_format($this->descontoPreco, 2, ',', '.') . "<br />";
-                        }
-
-                        public function getPrecoTotal()
-                        {
-                            return $this->preco - $this->descontoPreco;
-                        }
-                    }
-
                     // Novo
                     $imovelNovo = new Novo("Ganton, Los Santos, San Andreas.", 200000, 10000);
 
@@ -222,65 +108,6 @@ require('exercises-php/exs-03/contador.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
-
-                    class Animal
-                    {
-                        protected $nome;
-                        protected $idade;
-                        protected $voa;
-
-                        public function __construct($nome, $idade, $voa)
-                        {
-                            $this->nome = $nome;
-                            $this->idade = $idade;
-                            $this->voa = $voa;
-                        }
-
-                        // Métodos de acesso
-                        public function getNome()
-                        {
-                            return $this->nome;
-                        }
-
-                        public function getIdade()
-                        {
-                            return $this->idade;
-                        }
-
-                        public function voar()
-                        {
-                            if ($this->voa) {
-                                echo "Voando... <br />";
-                            } else {
-                                echo "Este animal não voa. <br />";
-                            }
-                        }
-                    }
-
-                    class Cachorro extends Animal
-                    {
-                        public function late()
-                        {
-                            echo "O cachorro late: Au Au! <br />";
-                        }
-                    }
-
-                    class Gato extends Animal
-                    {
-                        public function mia()
-                        {
-                            echo "O gato mia: Miau Miau! <br />";
-                        }
-                    }
-
-                    class Cavalo extends Animal
-                    {
-                        public function relincha()
-                        {
-                            echo "O cavalo relincha: Hiiiiin! <br />";
-                        }
-                    }
-
                     $cachorro = new Cachorro("Tininha", 5, false);
                     echo "Nome do cachorro: " . $cachorro->getNome() . "<br />";
                     echo "Idade do cachorro: " . $cachorro->getIdade() . " anos" . "<br />";
@@ -302,9 +129,7 @@ require('exercises-php/exs-03/contador.php');
                     echo "Idade do cavalo: " . $cavalo->getIdade() . " anos" . "<br />";
                     $cavalo->voar();
                     $cavalo->relincha();
-
                     ?>
-
                 </div>
             </div>
         </div>

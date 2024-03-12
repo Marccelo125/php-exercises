@@ -1,110 +1,174 @@
-<?php
-    // Exercício 01
-    echo 'Exercício 01<br />';
-    $resultado = array();
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    $num1 = 1;
-    $num2 = 10;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - PHP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
 
-    function calcularMedia($num1, $num2) {
-        global $resultado;
+<body class="bg-dark p-2">
+    <main>
+        <div class="container-fuild text-white m-5">
+            <div class="row d-flex justify-content-evenly text-center">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <h1 style="color: light-blue;">N° do Exercício</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <h1 class="text-success">Resultado</h1>
+                    <span>Código no GitHub <a href="https://github.com/Marccelo125/php-exercises/tree/master/api/exercises-php/exs-01" target="_blank">Clique aqui</a></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <h3 class="text-warning">Exercício 01</h3>
+                    <p>
+                        Exercitando criação de classes
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <?php
+                    // Exercício 01
+                    echo 'Exercício 01<br />';
+                    $resultado = array();
 
-        $media = ($num1 + $num2) / 2;
-        $aprovado = false;
+                    $num1 = 1;
+                    $num2 = 10;
 
-        if ($media >= 6) {
-            $aprovado = true;
-        }
+                    function calcularMedia($num1, $num2)
+                    {
+                        global $resultado;
 
-        array_push($resultado, array(
-            'media' => $media,
-            'resumo' => $aprovado
-        ));
-    }
-    calcularMedia($num1, $num2);
-    var_dump($resultado);
+                        $media = ($num1 + $num2) / 2;
+                        $aprovado = false;
 
-    // Exercício 02
-    echo '<br /> Exercício 02 <br />';
+                        if ($media >= 6) {
+                            $aprovado = true;
+                        }
 
-    $notaPeso = array(
-        [
-            'nota' => 1,
-            'peso' => 1
-        ],
-        [
-            'nota' => 1,
-            'peso' => 1
-        ],
-        [
-            'nota' => 1,
-            'peso' => 10
-        ]
-    );
+                        array_push($resultado, array(
+                            'media' => $media,
+                            'resumo' => $aprovado
+                        ));
+                    }
+                    calcularMedia($num1, $num2);
+                    var_dump($resultado);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <h3 class="text-warning">Exercício 02</h3>
+                    <p>
+                        Exercitando criação de classes
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <?php // Exercício 02
+                    echo '<br /> Exercício 02 <br />';
 
-    $mediaFinal = 0;
+                    $notaPeso = array(
+                        [
+                            'nota' => 1,
+                            'peso' => 1
+                        ],
+                        [
+                            'nota' => 1,
+                            'peso' => 1
+                        ],
+                        [
+                            'nota' => 1,
+                            'peso' => 10
+                        ]
+                    );
 
-    function calcularPesoNota($lista) {
-        global $mediaFinal;
-        // Pegamos a média final que é global
-        $multiplicacao = 0;
-        // Criamos uma variavel para armazenar o resultado
-        // das multiplicações
+                    $mediaFinal = 0;
 
-        foreach ($lista as $key => $value) {
-            $multiplicacao += $value['nota'] * $value['peso'];
-            // Utilizamos forEach que coleta a nota e peso e os multiplica
-            // somando com o que já estiver em multiplicação ('+=')
-        }
+                    function calcularPesoNota($lista)
+                    {
+                        global $mediaFinal;
+                        // Pegamos a média final que é global
+                        $multiplicacao = 0;
+                        // Criamos uma variavel para armazenar o resultado
+                        // das multiplicações
 
-        return $mediaFinal = $multiplicacao / count($lista);
-        // Retornamos para a mediaFinal o resultado da soma de todas multiplicações
-        // divididas pelo total de elementos na lista
-    }
+                        foreach ($lista as $key => $value) {
+                            $multiplicacao += $value['nota'] * $value['peso'];
+                            // Utilizamos forEach que coleta a nota e peso e os multiplica
+                            // somando com o que já estiver em multiplicação ('+=')
+                        }
 
-    calcularPesoNota($notaPeso);
-    echo $mediaFinal;
+                        return $mediaFinal = $multiplicacao / count($lista);
+                        // Retornamos para a mediaFinal o resultado da soma de todas multiplicações
+                        // divididas pelo total de elementos na lista
+                    }
 
-    // Exercício 03
-    echo ' <br /> Exercício 03';
+                    calcularPesoNota($notaPeso);
+                    echo $mediaFinal;
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <h3 class="text-warning">Exercício 03</h3>
+                    <p>
+                        Exercitando criação de classes
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <?php
+                    // Exercício 03
+                    echo ' <br /> Exercício 03';
 
-    $listaProdutos = array();
+                    $listaProdutos = array();
 
-    function cadastrarProduto($nome, $preco) {
-        global $listaProdutos;
+                    function cadastrarProduto($nome, $preco)
+                    {
+                        global $listaProdutos;
 
-        array_push($listaProdutos, array(
-            "nome" => $nome,
-            "preco" => $preco
-        ));
-    }
+                        array_push($listaProdutos, array(
+                            "nome" => $nome,
+                            "preco" => $preco
+                        ));
+                    }
 
-    function listarProdutos() {
-        global $listaProdutos;
+                    function listarProdutos()
+                    {
+                        global $listaProdutos;
 
-        foreach ($listaProdutos as $key => $value) {
-            echo "<h4> Nome:" . $value['nome'] . "</h4>";
-            echo "<h4> Preço: R$" . $value['preco'] . "</h4>";
-            echo "<hr />";
-        }
-    }
+                        foreach ($listaProdutos as $key => $value) {
+                            echo "<h4> Nome:" . $value['nome'] . "</h4>";
+                            echo "<h4> Preço: R$" . $value['preco'] . "</h4>";
+                            echo "<hr />";
+                        }
+                    }
 
-    function excluirProduto($nome) {
-        global $listaProdutos;
+                    function excluirProduto($nome)
+                    {
+                        global $listaProdutos;
 
-        foreach ($listaProdutos as $key => $value) {
-            if ($value['nome'] == $nome) {
-                unset($listaProdutos[$key]);
-            }
-        }
-    }
+                        foreach ($listaProdutos as $key => $value) {
+                            if ($value['nome'] == $nome) {
+                                unset($listaProdutos[$key]);
+                            }
+                        }
+                    }
 
-    cadastrarProduto("Maçã", 3);
-    cadastrarProduto("Pêra", 5);
-    cadastrarProduto("Refri 3L", 12);
-    
-    listarProdutos();
-    echo "<br /> Excluindo produtos <br />";
-    excluirProduto('Maçã');
-    listarProdutos()
-?>
+                    cadastrarProduto("Maçã", 3);
+                    cadastrarProduto("Pêra", 5);
+                    cadastrarProduto("Refri 3L", 12);
+
+                    listarProdutos();
+                    echo "<br /> Excluindo produtos <br />";
+                    excluirProduto('Maçã');
+                    listarProdutos()
+                    ?>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

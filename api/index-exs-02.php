@@ -1,26 +1,66 @@
 <?php
+require_once('./exercises-php/exs-02/animal.php');
+require_once('./exercises-php/exs-02/cachorro.php');
+require_once('./exercises-php/exs-02/gato.php');
+?>
 
-require('exercises-php/exs-02/animal.php');
-require('exercises-php/exs-02/cachorro.php');
-require('exercises-php/exs-02/gato.php');
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-$animal = new Animal("carnivoro", "dinossauro", false);
-$animal2 = new Animal("herbívoro", "ave", true);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - PHP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
 
-$animal->mostrarDetalhe();
-echo "<br />";
-$animal2->mostrarDetalhe();
+<body class="bg-dark p-2">
+    <main>
+        <div class="container-fuild text-white m-5">
+            <div class="row d-flex justify-content-evenly text-center">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <h1 style="color: light-blue;">N° do Exercício</h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <h1 class="text-success">Resultado</h1>
+                    <span>Código no GitHub <a href="https://github.com/Marccelo125/php-exercises/tree/master/api/exercises-php/exs-02" target="_blank">Clique aqui</a></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <h3 class="text-warning">Exercício 01</h3>
+                    <p>
+                        Exercitando criação de classes
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
+                    <?php
+                    $animal = new Animal1("carnivoro", "dinossauro", false);
+                    $animal2 = new Animal1("herbívoro", "ave", true);
 
-$luly = new cachorro("Luly", "Carnivoro", "Vira-lata", false);
+                    $animal->mostrarDetalhe();
+                    echo "<br />";
+                    $animal2->mostrarDetalhe();
 
-echo $luly->mostrarDetalhe();
-echo "Nome: $luly->nome";
+                    $luly = new cachorro1("Luly", "Carnivoro", "Vira-lata", false);
 
-$luly->latir();
+                    echo $luly->mostrarDetalhe();
+                    echo "Nome: $luly->nome";
 
-$pudim = new gato("Pupu", "Preguiçoso", "Carnivoro", "Vira-lata", false);
+                    $luly->latir();
 
-echo $pudim->mostrarDetalhe();
-echo "Nome: $pudim->apelido";
+                    $pudim = new gato1("Pupu", "Preguiçoso", "Carnivoro", "Vira-lata", false);
 
-echo $pudim->miar();
+                    echo $pudim->mostrarDetalhe();
+                    echo "Nome: $pudim->apelido";
+
+                    echo $pudim->miar();
+                    ?>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
