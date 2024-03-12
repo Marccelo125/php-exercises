@@ -30,13 +30,3 @@ class Camarote extends ingresso {
         echo "<br /> Valor do ingresso Camarote: R$ " . number_format($this->valor + $valorCamarote, 2, ',', '.' . "<br />");
     }
 }
-
-$ingressoNormal = new Normal(50.00);
-$ingressoNormal->imprimeValor();
-
-
-$ingressoVIP = new Vip(50.00);
-$ingressoVIP->imprimeValor();
-
-$ingressoCamarote = new Camarote(50.00);
-$ingressoCamarote->imprimeValor();

@@ -54,13 +54,3 @@ class Circulo extends formatoDoElemento {
         $this->raio = $raio;
     }
 }
-
-$retangulo = new Retangulo(5, 10);
-$retangulo->desenhar();
-$retangulo->redimensionar(10, 10);
-$retangulo->desenhar();
-
-$circulo = new Circulo(5);
-$circulo->desenhar();
-$circulo->redimensionar(8);
-$circulo->desenhar();

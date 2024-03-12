@@ -1,6 +1,5 @@
 <?php
 
-require_once("./item.php");
 
 class Pedido {
     public $itens;
@@ -31,12 +30,3 @@ class Pedido {
         echo "Valor Total da compra: R$ {$this->valorTotal}";
     }
 }
-
-
-$cachorroQuente = new Item(10, "Cachorro Quente", "Não é um cachorro mas é quente");
-$batata = new Item(4, "Batata", "POTATO!");
-$melao = new Item(8, "Melão Quente", "Me vê um Milão");
-$novoPedido = new Pedido();
-$novoPedido->adicionarItem($cachorroQuente, $batata, $melao);
-$novoPedido->mostrarPedido();
-$novoPedido->valorTotal();

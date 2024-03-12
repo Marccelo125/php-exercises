@@ -46,27 +46,4 @@ class Cavalo extends Animal {
         echo "O cavalo relincha: Hiiiiin! <br />";
     }
 }
-
-$cachorro = new Cachorro("Tininha", 5, false);
-echo "Nome do cachorro: " . $cachorro->getNome() . "<br />";
-echo "Idade do cachorro: " . $cachorro->getIdade() . " anos" . "<br />";
-$cachorro->voar();
-$cachorro->late();
-
-echo "<hr>";
-
-$gato = new Gato("Pudim", 1, false);
-echo "Nome do gato: " . $gato->getNome() . "<br />";
-echo "Idade do gato: " . $gato->getIdade() . " anos" . "<br />";
-$gato->voar();
-$gato->mia();
-
-echo "<hr>";
-
-$cavalo = new Cavalo("Trovão", 12, false);
-echo "Nome do cavalo: " . $cavalo->getNome() . "<br />";
-echo "Idade do cavalo: " . $cavalo->getIdade() . " anos" . "<br />";
-$cavalo->voar();
-$cavalo->relincha();
-
 ?>

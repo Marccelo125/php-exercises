@@ -1,5 +1,4 @@
-<?php 
-require_once("./Paciente.php");
+<?php
 
 class Medico {
     private $nome;

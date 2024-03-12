@@ -1,8 +1,5 @@
 <?php
 
-require 'Paciente.php';
-require 'Medico.php';
-
 $medico = new Medico("Dr. Smith", "Cardiologista");
 
 $paciente1 = new Paciente("Alice", 30);

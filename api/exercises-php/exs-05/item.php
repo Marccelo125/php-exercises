@@ -1,5 +1,4 @@
 <?php
-require_once ("./pedidos.php");
 
 class Item {
     public $valor;
