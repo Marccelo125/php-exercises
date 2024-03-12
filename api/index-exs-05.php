@@ -199,7 +199,7 @@ require('exercises-php/exs-03/contador.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3>Para acessar o diagrama completo</h3>
-                    <h5><a href="https://drive.google.com/file/d/1F987vGKYQktIH5Zr4579cwcazk7WB46R/view?usp=sharing" target="_blank">Clique aqui</a></h5>
+                    <h5><a href="https://drive.google.com/file/d/1m3b4SomIb0_5xuKSxef2TJHSrVa1Rp7q/view?usp=sharing" target="_blank">Clique aqui</a></h5>
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <h3 class="text-warning">Exercício 04</h3>
