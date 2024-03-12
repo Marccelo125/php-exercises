@@ -212,8 +212,7 @@ require('exercises-php/exs-03/contador.php');
             </div>
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
-                    <h3 class="text-warning">Exercício 02</h3>
-                    <img src="" alt="">
+                    <h3 class="text-warning">Exercício 03</h3>
                     <p>
                         <code>Animal -> Cavalo, Gato e Cachorro. <br /></code>
                         Identifique os atributos e comportamentos que são comuns entre os
