@@ -31,9 +31,57 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
-                    require_once('/api/exercises-php/exs-05/item.php');
-                    require_once('/api/exercises-php/exs-05/pedidos.php');
-                    
+
+                    class Item
+                    {
+                        public $valor;
+                        public $nome;
+                        public $descricao;
+
+                        public function __construct($valor, $nome, $descricao = "")
+                        {
+                            $this->valor = $valor;
+                            $this->nome = $nome;
+                            $this->descricao = $descricao;
+                        }
+                    }
+
+
+                    class Pedido
+                    {
+                        public $itens;
+                        public $valorTotal;
+
+                        public function __construct()
+                        {
+                            $this->itens = array();
+                        }
+
+                        public function adicionarItem(...$data)
+                        {
+                            $this->itens = [...$this->itens, ...$data];
+                        }
+
+                        public function mostrarPedido()
+                        {
+                            echo "PEDIDO: <br />";
+                            foreach ($this->itens as $item) {
+                                echo "Item: $item->nome <br />";
+                                echo "Descrição: $item->descricao <br />";
+                                echo "Preço: R$ $item->valor <br />";
+                                echo "<hr>";
+                            }
+                        }
+
+                        public function valorTotal()
+                        {
+                            foreach ($this->itens as $item) {
+                                $this->valorTotal += $item->valor;
+                            }
+                            echo "Valor Total da compra: R$ {$this->valorTotal}";
+                        }
+                    }
+
 
                     $cachorroQuente = new Item(10, "Cachorro Quente", "Não é um cachorro mas é quente");
                     $batata = new Item(4, "Batata", "POTATO!");
@@ -56,7 +104,70 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
-                    require_once('/api/exercises-php/exs-05/formatoDeElemento.php');
+
+                    abstract class formatoDoElemento
+                    {
+                        abstract public function desenhar();
+                        abstract public function redimensionar($raio, $comprimento, $altura);
+                    }
+
+                    class Retangulo extends formatoDoElemento
+                    {
+                        public $comprimento;
+                        public $altura;
+
+                        public function __construct($comprimento, $altura)
+                        {
+                            $this->comprimento = $comprimento;
+                            $this->altura = $altura;
+                        }
+
+                        public function desenhar()
+                        {
+                            $areaTotal = $this->comprimento * $this->altura;
+                            $printComprimento = str_repeat("🟥", $this->comprimento);
+
+                            for ($i = 0; $i < $this->altura; $i++) {
+                                echo $printComprimento . "<br />";
+                            }
+
+                            echo "<br /> Comprimento: {$this->comprimento} <br />";
+                            echo "Altura: {$this->altura} <br />";
+                            echo "Área: $areaTotal <br />";
+                        }
+
+                        public function redimensionar($comprimento, $altura, $raio = 0)
+                        {
+                            $this->comprimento = $comprimento;
+                            $this->altura = $altura;
+                        }
+                    }
+
+                    class Circulo extends formatoDoElemento
+                    {
+                        public $raio;
+
+                        public function __construct($raio)
+                        {
+                            $this->raio = $raio;
+                        }
+
+                        public function desenhar()
+                        {
+                            $areaTotal = pi() * pow($this->raio, 2);
+                            $raioPow = pow($this->raio, 2);
+
+                            echo "<div style='width:{$raioPow}; height:{$raioPow}; border-radius:50%; background-color:red'></div> <br />";
+
+                            echo "<br /> Raio: {$this->raio} <br />";
+                            echo "Área: $areaTotal <br />";
+                        }
+
+                        public function redimensionar($raio, $comprimento = 0, $altura = 0)
+                        {
+                            $this->raio = $raio;
+                        }
+                    }
                     $retangulo = new Retangulo(5, 10);
                     $retangulo->desenhar();
                     $retangulo->redimensionar(10, 10);
@@ -96,8 +207,125 @@
                     <h5><a href="https://drive.google.com/file/d/1F987vGKYQktIH5Zr4579cwcazk7WB46R/view?usp=sharing" target="_blank">Clique aqui</a></h5>
                     <hr>
                     <?php
-                    require_once('/api/exercises-php/exs-05/Medico.php');
-                    require_once('/api/exercises-php/exs-05/Paciente.php');
+
+                    class Medico
+                    {
+                        private $nome;
+                        private $pacientes = [];
+                        private $especialidade;
+
+                        public function __construct($nome, $especialidade)
+                        {
+                            $this->nome = $nome;
+                            $this->especialidade = $especialidade;
+                        }
+
+                        public function adicionarPaciente(Paciente $paciente)
+                        {
+                            $this->pacientes[] = $paciente;
+                            echo "Paciente {$paciente->getNome()} adicionado com sucesso para o médico {$this->nome}.<br />";
+                            echo "<hr>";
+                        }
+
+                        public function listarPacientes()
+                        {
+                            echo "Lista de pacientes para o médico {$this->nome}:<br />";
+                            foreach ($this->pacientes as $paciente) {
+                                echo "- {$paciente->getNome()}<br />";
+                            }
+                            echo "<hr>";
+                            return $this->pacientes;
+                        }
+
+                        public function getHistorico()
+                        {
+                            echo "Histórico completo para o médico {$this->nome}:<br />";
+                            $historicoCompleto = [];
+
+                            foreach ($this->pacientes as $paciente) {
+                                $historicoCompleto[$paciente->getNome()] = $paciente->mostrarHistorico();
+                            }
+
+                            return $historicoCompleto;
+                        }
+
+                        public function getNome()
+                        {
+                            return $this->nome;
+                        }
+
+                        public function getEspecialidade()
+                        {
+                            return $this->especialidade;
+                        }
+                    }
+
+
+                    class Paciente
+                    {
+                        private $nome;
+                        private $idade;
+                        private $historicoMedico = [];
+
+                        public function __construct($nome, $idade)
+                        {
+                            $this->nome = $nome;
+                            $this->idade = $idade;
+                        }
+
+                        public function cadastrarHistorico($evento)
+                        {
+                            $this->historicoMedico[] = $evento;
+                            echo "Histórico cadastrado com sucesso para o paciente {$this->nome}.<br />";
+                            echo "<hr>";
+                        }
+
+                        public function mostrarHistorico()
+                        {
+                            echo "Histórico médico do paciente {$this->nome}:<br />";
+                            print_r($this->historicoMedico);
+                            echo "<hr>";
+                            return $this->historicoMedico;
+                        }
+
+                        public function atualizarHistorico($indice, $novoEvento)
+                        {
+                            if ($this->existeIndice($indice)) {
+                                $this->historicoMedico[$indice] = $novoEvento;
+                                echo "Histórico atualizado com sucesso para o paciente {$this->nome}.<br />";
+                            } else {
+                                echo "Índice inválido. Atualização falhou para o paciente {$this->nome}.<br />";
+                            }
+                            echo "<hr>";
+                        }
+
+                        public function deletarHistorico($indice)
+                        {
+                            if ($this->existeIndice($indice)) {
+                                unset($this->historicoMedico[$indice]);
+                                $this->historicoMedico = array_values($this->historicoMedico);
+                                echo "Histórico deletado com sucesso para o paciente {$this->nome}.<br />";
+                            } else {
+                                echo "Índice inválido. Deleção falhou para o paciente {$this->nome}.<br />";
+                            }
+                            echo "<hr>";
+                        }
+
+                        private function existeIndice($indice)
+                        {
+                            return isset($this->historicoMedico[$indice]);
+                        }
+
+                        public function getNome()
+                        {
+                            return $this->nome;
+                        }
+
+                        public function getIdade()
+                        {
+                            return $this->idade;
+                        }
+                    }
 
                     $medico = new Medico("Dr. Smith", "Cardiologista");
 
