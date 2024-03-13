@@ -1,12 +1,3 @@
-<?php
-require_once('./exercises-php/exs-05/formatoDeElemento.php');
-require_once('./exercises-php/exs-05/item.php');
-require_once('./exercises-php/exs-05/Medico.php');
-require_once('./exercises-php/exs-05/Paciente.php');
-require_once('./exercises-php/exs-05/pedidos.php');
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -40,6 +31,9 @@ require_once('./exercises-php/exs-05/pedidos.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
+                    require_once('./exercises-php/exs-05/item.php');
+                    require_once('./exercises-php/exs-05/pedidos.php');
+
                     $cachorroQuente = new Item(10, "Cachorro Quente", "Não é um cachorro mas é quente");
                     $batata = new Item(4, "Batata", "POTATO!");
                     $melao = new Item(8, "Melão Quente", "Me vê um Milão");
@@ -61,6 +55,7 @@ require_once('./exercises-php/exs-05/pedidos.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
+                    require_once('./exercises-php/exs-05/formatoDeElemento.php');
                     $retangulo = new Retangulo(5, 10);
                     $retangulo->desenhar();
                     $retangulo->redimensionar(10, 10);
@@ -100,6 +95,9 @@ require_once('./exercises-php/exs-05/pedidos.php');
                     <h5><a href="https://drive.google.com/file/d/1F987vGKYQktIH5Zr4579cwcazk7WB46R/view?usp=sharing" target="_blank">Clique aqui</a></h5>
                     <hr>
                     <?php
+                    require_once('./exercises-php/exs-05/Medico.php');
+                    require_once('./exercises-php/exs-05/Paciente.php');
+
                     $medico = new Medico("Dr. Smith", "Cardiologista");
 
                     $paciente1 = new Paciente("Alice", 30);
@@ -125,4 +123,5 @@ require_once('./exercises-php/exs-05/pedidos.php');
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
