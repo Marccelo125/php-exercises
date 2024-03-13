@@ -35,6 +35,84 @@ require_once('./exercises-php/exs-02/gato.php');
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 my-2 overflow-auto shadow p-4" style="max-height: 75vh; border: 2px solid #1c1c1c">
                     <?php
+                    class animal1
+                    {
+                        public $tipo;
+                        public $especie;
+                        public $voa;
+
+                        public function __construct($tipo, $especie, $voa)
+                        {
+                            $this->tipo = $tipo;
+                            $this->especie = $especie;
+                            $this->voa = $voa;
+                        }
+
+                        public function voar()
+                        {
+                            if ($this->voa) {
+                                echo "Voando...";
+                            } else {
+                                echo "Este animal não voa.";
+                            }
+                        }
+
+                        public function mostrarDetalhe()
+                        {
+                            echo "Detalhe do meu animal";
+                            echo "<hr />";
+                            echo "Tipo: $this->tipo";
+                            echo "<br />";
+                            echo "Especie: $this->especie";
+                            echo "<br />";
+
+                            $voa = "sim";
+
+                            $voa = $this->voa ? "Voa: Este animal voa" : "Voa: Este animal não voa";
+                            echo $voa;
+                            echo "<br />";
+                        }
+                    }
+
+                    class cachorro1 extends Animal1
+                    {
+                        public $nome;
+
+                        public function __construct($nome, $tipo, $especie, $voa)
+                        {
+                            $this->nome = $nome;
+
+                            parent::__construct($tipo, $especie, $voa);
+                        }
+
+                        public function latir()
+                        {
+                            echo "<br />";
+                            echo "Auauuuu...";
+                        }
+                    }
+
+                    class gato1 extends Animal1
+                    {
+                        public $apelido;
+                        public $personalidade;
+
+                        public function __construct($apelido, $personalidade, $tipo, $especie, $voa)
+                        {
+                            $this->apelido = $apelido;
+                            $this->personalidade = $personalidade;
+
+                            parent::__construct($tipo, $especie, $voa);
+                        }
+
+                        public function miar()
+                        {
+                            echo "<br />";
+                            echo "Miauuu";
+                        }
+                    }
+
+
                     $animal = new Animal1("carnivoro", "dinossauro", false);
                     $animal2 = new Animal1("herbívoro", "ave", true);
 
